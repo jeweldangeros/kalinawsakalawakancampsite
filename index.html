@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Kalinaw sa Kalawakan Campsite in DRT Bulacan. Reconnect with nature: enjoy a relaxing view, Kawa baths, comfortable kubos, and peaceful nights under the stars.">
+    <title>Kalinaw sa Kalawakan Campsite | Home of Reconnection</title>
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Material+Icons+Round&display=swap" rel="stylesheet">
+    
+    <!-- Stripe JS SDK -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Spinner Overlay -->
+    <div id="loading-spinner" class="spinner-overlay hidden">
+        <div class="spinner"></div>
+        <p class="spinner-text">Reconnecting with nature...</p>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="material-icons-round logo-icon">forest</span>
+                <span class="logo-text">KALINAW</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#accommodations" class="nav-link">Campsites</a></li>
+                    <li><a href="#availability" class="nav-link">Calendar</a></li>
+                    <li><a href="#weather" class="nav-link">Weather</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#booking-section" class="btn btn-primary btn-nav-book">Book Now</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="material-icons-round">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Landing Section -->
+    <section id="hero" class="hero-section" style="background-image: linear-gradient(rgba(25, 32, 26, 0.45), rgba(25, 32, 26, 0.85)), url('../../Kalinaw Rooms/Kalinaw night.jpg');">
+        <div class="hero-content">
+            <span class="hero-subtitle">ESTABLISHED 2021 | DOÑA REMEDIOS TRINIDAD</span>
+            <h1 class="hero-title">Kalinaw sa Kalawakan</h1>
+            <p class="hero-tagline">Birds chirping, relaxing view, and a great company - Welcome to your home of reconnection 💚</p>
+            <div class="hero-ctas">
+                <a href="#availability" class="btn btn-primary btn-lg">Reserve a Spot</a>
+                <a href="#accommodations" class="btn btn-outline btn-lg">Explore Campsites</a>
+            </div>
+            
+            <!-- Quick Info Ribbon -->
+            <div class="hero-ribbon">
+                <div class="ribbon-item">
+                    <span class="material-icons-round">nature_people</span>
+                    <div>
+                        <h4>Serene Escape</h4>
+                        <p>Immersed in Nature</p>
+                    </div>
+                </div>
+                <div class="ribbon-item">
+                    <span class="material-icons-round">hot_tub</span>
+                    <div>
+                        <h4>Kalinaw Kawa Bath</h4>
+                        <p>Relaxing Hot Tub</p>
+                    </div>
+                </div>
+                <div class="ribbon-item">
+                    <span class="material-icons-round">pets</span>
+                    <div>
+                        <h4>Pet Friendly</h4>
+                        <p>Bring Your Furry Friends</p>
+                    </div>
+                </div>
+                <div class="ribbon-item">
+                    <span class="material-icons-round">portable_wifi_off</span>
+                    <div>
+                        <h4>Digital Detox</h4>
+                        <p>Reconnect Offline</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-down">
+            <a href="#about" aria-label="Scroll Down">
+                <span class="material-icons-round animated-bounce">keyboard_double_arrow_down</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text-content">
+                    <span class="section-badge">Welcome to Serenity</span>
+                    <h2 class="section-title">Escape to Doña Remedios Trinidad</h2>
+                    <p class="lead-text">Kalinaw sa Kalawakan is a peaceful, rustic campsite nestled in the lush landscapes of DRT, Bulacan. We are not a luxury glamping resort, but a sanctuary of natural simplicity.</p>
+                    <p>Here, you'll fall asleep under star-filled skies, wake to the beautiful sound of chirping birds, and feel the cold breeze. Take a traditional Kawa bath, gather around a crackling bonfire, or splash in our refreshing public pool. It's the perfect environment to switch off your screens (cellular signals are Globe/TM only!) and reconnect with your loved ones, yourself, and nature.</p>
+                    
+                    <div class="amenities-list">
+                        <h3>Camp Amenities</h3>
+                        <div class="amenities-grid">
+                            <div class="amenity-item">
+                                <span class="material-icons-round">pool</span>
+                                <span>Public Swimming Pool</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="material-icons-round">local_fire_department</span>
+                                <span>Bonfire Areas</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="material-icons-round">soup_kitchen</span>
+                                <span>Common Cooking Area</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="material-icons-round">wc</span>
+                                <span>Common Restrooms & Showers</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="material-icons-round">local_convenience_store</span>
+                                <span>Kalinaw Store (7AM - 10PM)</span>
+                            </div>
+                            <div class="amenity-item">
+                                <span class="material-icons-round">sports_basketball</span>
+                                <span>Basketball Court for Rent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-gallery-container">
+                    <span class="section-badge">Visual Tour</span>
+                    <h3 class="gallery-subtitle">Snapshots of Kalinaw</h3>
+                    
+                    <!-- Interactive Carousel/Gallery -->
+                    <div class="gallery-slider">
+                        <div class="gallery-track" id="gallery-track">
+                            <div class="gallery-slide active">
+                                <img src="../../Kalinaw Rooms/Entrance to Campsite.jpg" alt="Entrance to Campsite">
+                                <div class="slide-caption">Entrance to Campsite</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../../Kalinaw Rooms/Kalinaw Open Field.jpg" alt="Campsite Open Field">
+                                <div class="slide-caption">Lush Open Field</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../../Kalinaw Rooms/Kalinaw Pool.jpg" alt="Swimming Pool">
+                                <div class="slide-caption">Refreshing Swimming Pool</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../../Kalinaw Rooms/Kawa Bath.jpg" alt="Kalinaw Kawa Bath">
+                                <div class="slide-caption">Relaxing Kawa Bath</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../../Kalinaw Rooms/Lambing inside.jpg" alt="Lambing Cabin Inside">
+                                <div class="slide-caption">Lambing Cabin Interior</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../../Kalinaw Rooms/Grilling Area.jpg" alt="Grilling Area">
+                                <div class="slide-caption">Designated Grilling & Cooking Area</div>
+                            </div>
+                        </div>
+                        <button class="gallery-btn prev-btn" id="gallery-prev" aria-label="Previous image">
+                            <span class="material-icons-round">chevron_left</span>
+                        </button>
+                        <button class="gallery-btn next-btn" id="gallery-next" aria-label="Next image">
+                            <span class="material-icons-round">chevron_right</span>
+                        </button>
+                    </div>
+                    <div class="gallery-dots" id="gallery-dots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations / Campsites Section -->
+    <section id="accommodations" class="accommodations-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Choose Your Stay</span>
+                <h2 class="section-title">Accommodations & Promo Packages</h2>
+                <p class="section-desc">From native traditional Kubo rooms to cozy air-conditioned cabins and scenic tents under the open sky. Pick what fits your adventure.</p>
+            </div>
+            
+            <div class="accommodations-grid">
+                <!-- Yakap Room -->
+                <div class="acc-card" data-category="kubo">
+                    <div class="acc-img-wrapper">
+                        <img src="../../Kalinaw Rooms/Yakap Room.jpg" alt="Yakap Room">
+                        <span class="acc-badge">Popular Kubo</span>
+                    </div>
+                    <div class="acc-details">
+                        <div class="acc-meta">
+                            <span class="acc-capacity"><span class="material-icons-round">people</span> Good for 2 pax</span>
+                            <span class="acc-bed"><span class="material-icons-round">bed</span> Full Mattress</span>
+                        </div>
+                        <h3 class="acc-title">Yakap Room</h3>
+                        <p class="acc-desc">A charming, native fan Kubo designed for couples or close friends looking to cuddle up close to nature.</p>
+                        <div class="acc-inclusions">
+                            <strong>Includes:</strong> Fan, mattress, pillows, light, electric outlet, outdoor table & chairs, access to pool, cooking area, parking, and entrance fee.
+                        </div>
+                        <div class="acc-pricing-row">
+                            <div class="acc-price">
+                                <span class="currency">₱</span><span class="amount">1,299</span><span class="period">/night</span>
+                            </div>
+                            <button class="btn btn-secondary btn-reserve-select" data-room-id="yakap">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pahinga Room -->
+                <div class="acc-card" data-category="kubo">
+                    <div class="acc-img-wrapper">
+                        <img src="../../Kalinaw Rooms/Pahinga.jpg" alt="Pahinga Room">
+                    </div>
+                    <div class="acc-details">
+                        <div class="acc-meta">
+                            <span class="acc-capacity"><span class="material-icons-round">people</span> Good for 3 pax</span>
+                            <span class="acc-bed"><span class="material-icons-round">bed</span> King Size Mattress</span>
+                        </div>
+                        <h3 class="acc-title">Pahinga Room</h3>
+                        <p class="acc-desc">A slightly spacious fan Kubo ideal for a small family or trio wishing to rest and unwind in the mountains.</p>
+                        <div class="acc-inclusions">
+                            <strong>Includes:</strong> Fan, King mattress, pillows, light, electric outlet, outdoor table & chairs, access to pool, cooking area, parking, and entrance fee.
+                        </div>
+                        <div class="acc-pricing-row">
+                            <div class="acc-price">
+                                <span class="currency">₱</span><span class="amount">1,899</span><span class="period">/night</span>
+                            </div>
+                            <button class="btn btn-secondary btn-reserve-select" data-room-id="pahinga">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maligaya Room -->
+                <div class="acc-card" data-category="kubo">
+                    <div class="acc-img-wrapper">
+                        <img src="../../Kalinaw Rooms/Maligaya Room .jpg" alt="Maligaya Room">
+                        <span class="acc-badge highlight">For Groups</span>
+                    </div>
+                    <div class="acc-details">
+                        <div class="acc-meta">
+                            <span class="acc-capacity"><span class="material-icons-round">people</span> Good for 10 pax</span>
+                            <span class="acc-bed"><span class="material-icons-round">bed</span> 2 King & 2 Full Mattress</span>
+                        </div>
+                        <h3 class="acc-title">Maligaya Room</h3>
+                        <p class="acc-desc">Our large native fan Kubo perfect for family gatherings or barkada getaways. Fits up to 10 guests comfortably.</p>
+                        <div class="acc-inclusions">
+                            <strong>Includes:</strong> Fan, 4 mattresses, pillows, light, electric outlet, large table & chairs, access to pool, cooking area, parking, and entrance fee.
+                        </div>
+                        <div class="acc-pricing-row">
+                            <div class="acc-price">
+                                <span class="currency">₱</span><span class="amount">5,999</span><span class="period">/night</span>
+                            </div>
+                            <button class="btn btn-secondary btn-reserve-select" data-room-id="maligaya">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lambing Cabin -->
+                <div class="acc-card" data-category="cabin">
+                    <div class="acc-img-wrapper">
+                        <img src="../../Kalinaw Rooms/Lambing Room.jpg" alt="Lambing Cabin">
+                        <span class="acc-badge cabin-badge">AC Cabin</span>
+                    </div>
+                    <div class="acc-details">
+                        <div class="acc-meta">
+                            <span class="acc-capacity"><span class="material-icons-round">people</span> Good for 2 pax</span>
+                            <span class="acc-bed"><span class="material-icons-round">ac_unit</span> Airconditioned</span>
+                        </div>
+                        <h3 class="acc-title">Lambing Cabin</h3>
+                        <p class="acc-desc">Cozy, modern A-frame wood cabin equipped with air conditioning and Japanese-style seating for a romantic escape.</p>
+                        <div class="acc-inclusions">
+                            <strong>Includes:</strong> Aircondition, Double mattress, 2 pillows, 1 flatsheet, clothes rack, Japanese-style table/chairs, fan with light, outlet, pool & cooking access.
+                        </div>
+                        <div class="acc-pricing-row">
+                            <div class="acc-price">
+                                <span class="currency">₱</span><span class="amount">2,999</span><span class="period">/night</span>
+                            </div>
+                            <button class="btn btn-secondary btn-reserve-select" data-room-id="lambing">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tinatangi Package -->
+                <div class="acc-card package-card" data-category="package">
+                    <div class="acc-img-wrapper">
+                        <img src="../../Promo Rates/Tinatangi Package.jpg" alt="Tinatangi Package">
+                        <span class="acc-badge package-badge">Value Promo</span>
+                    </div>
+                    <div class="acc-details">
+                        <div class="acc-meta">
+                            <span class="acc-capacity"><span class="material-icons-round">favorite</span> Good for 2 pax</span>
+                            <span class="acc-bed"><span class="material-icons-round">celebration</span> Special Couple Inclusions</span>
+                        </div>
+                        <h3 class="acc-title">Tinatangi Package</h3>
+                        <p class="acc-desc">A curated couple's package designed for connection. Includes 1-hour Kawa Bath with a bath bomb, fire setup, couple mugs, pool access, and breakfast!</p>
+                        <div class="acc-inclusions font-sm">
+                            <strong>Inclusions:</strong> Room of choice + 2 Pax Breakfast + Pool Access + 1 Kawa Bath Set (1 hr with bath bomb) + 1 Bonfire Set + Couple Yakap Mug to take home.
+                        </div>
+                        <div class="package-selection-row">
+                            <div class="pkg-option">
+                                <span>With Yakap Room</span>
+                                <strong>₱2,910</strong>
+                            </div>
+                            <div class="pkg-option">
+                                <span>With Lambing Cabin</span>
+                                <strong>₱4,610</strong>
+                            </div>
+                        </div>
+                        <div class="acc-pricing-row">
+                            <div class="acc-price">
+                                <span class="period">Starts at</span> <span class="currency">₱</span><span class="amount">2,910</span>
+                            </div>
+                            <button class="btn btn-secondary btn-reserve-select" data-room-id="tinatangi-yakap">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tents & Cottages -->
+                <div class="acc-card" data-category="tent">
+                    <div class="acc-img-wrapper">
+                        <img src="../../Kalinaw Rooms/Kapiling Tent.jpg" alt="Kapiling Tent">
+                    </div>
+                    <div class="acc-details">
+                        <div class="acc-meta">
+                            <span class="acc-capacity"><span class="material-icons-round">camping</span> Tents & Cottages</span>
+                            <span class="acc-bed"><span class="material-icons-round">star</span> Close to Nature</span>
+                        </div>
+                        <h3 class="acc-title">Tents & Day Tour Cottages</h3>
+                        <p class="acc-desc">Experience camping in its purest form. Set up your own tent or stay in our pre-pitched Kapiling Tent or day tour cottages.</p>
+                        <ul class="acc-bullets">
+                            <li><strong>Kapiling Tent (Good for 2):</strong> ₱999/night (includes entry)</li>
+                            <li><strong>Bring Your Own Tent:</strong> ₱350/head (includes entry)</li>
+                            <li><strong>Silong Cottage (Good for 6):</strong> ₱600 (Day tour)</li>
+                            <li><strong>Tambay Cottage (Good for 10):</strong> ₱1,300 (Day tour)</li>
+                        </ul>
+                        <div class="acc-pricing-row mt-auto">
+                            <div class="acc-price">
+                                <span class="currency">₱</span><span class="amount">350</span><span class="period">/head (Own Tent)</span>
+                            </div>
+                            <button class="btn btn-secondary btn-reserve-select" data-room-id="tent-own">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar & Reservation Panel -->
+    <section id="availability" class="calendar-booking-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Check Availability</span>
+                <h2 class="section-title">Calendar & Reservation</h2>
+                <p class="section-desc">Use the interactive calendar to view booked dates and select your desired dates. Scroll to fill out details and complete your reservation.</p>
+            </div>
+            
+            <div class="calendar-booking-grid">
+                <!-- Availability Calendar Card -->
+                <div class="calendar-card">
+                    <div class="calendar-header-ui">
+                        <h3 class="card-subtitle"><span class="material-icons-round">calendar_month</span> Availability Calendar</h3>
+                        <div class="calendar-legend">
+                            <span class="legend-item"><span class="dot available"></span> Available</span>
+                            <span class="legend-item"><span class="dot partial"></span> Partial</span>
+                            <span class="legend-item"><span class="dot booked"></span> Booked</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-month-selector">
+                        <button class="cal-nav-btn" id="cal-prev" aria-label="Previous Month">
+                            <span class="material-icons-round">arrow_back_ios</span>
+                        </button>
+                        <h4 id="calendar-month-year">May 2026</h4>
+                        <button class="cal-nav-btn" id="cal-next" aria-label="Next Month">
+                            <span class="material-icons-round">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="calendar-day-header">Sun</div>
+                        <div class="calendar-day-header">Mon</div>
+                        <div class="calendar-day-header">Tue</div>
+                        <div class="calendar-day-header">Wed</div>
+                        <div class="calendar-day-header">Thu</div>
+                        <div class="calendar-day-header">Fri</div>
+                        <div class="calendar-day-header">Sat</div>
+                        <div class="calendar-days-container" id="calendar-days">
+                            <!-- Dynamic Day Nodes Go Here -->
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-tip">
+                        <span class="material-icons-round">info</span>
+                        <p>Past dates are disabled. Click a date to select it as Check-In, then another to select Check-Out.</p>
+                    </div>
+                </div>
+
+                <!-- Booking / Reservation Form Card -->
+                <div class="booking-card" id="booking-section">
+                    <div class="booking-header">
+                        <h3 class="card-subtitle"><span class="material-icons-round">edit_note</span> Reservation Form</h3>
+                        <span class="draft-indicator hidden" id="draft-indicator">Draft Saved</span>
+                    </div>
+                    
+                    <form id="reservation-form" novalidate>
+                        <!-- Form Step 1: Guest Details -->
+                        <div class="form-step active" data-step="1">
+                            <h4 class="step-title">Step 1: Contact Details</h4>
+                            <div class="form-group">
+                                <label for="guest-name">Full Name <span class="required">*</span></label>
+                                <div class="input-icon-wrapper">
+                                    <span class="material-icons-round input-icon">person</span>
+                                    <input type="text" id="guest-name" name="guest-name" placeholder="Juan Dela Cruz" required>
+                                </div>
+                                <span class="error-msg" id="name-error">Please enter your name</span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guest-email">Email Address <span class="required">*</span></label>
+                                    <div class="input-icon-wrapper">
+                                        <span class="material-icons-round input-icon">email</span>
+                                        <input type="email" id="guest-email" name="guest-email" placeholder="juan@email.com" required>
+                                    </div>
+                                    <span class="error-msg" id="email-error">Please enter a valid email</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guest-phone">Phone Number <span class="required">*</span></label>
+                                    <div class="input-icon-wrapper">
+                                        <span class="material-icons-round input-icon">phone</span>
+                                        <input type="tel" id="guest-phone" name="guest-phone" placeholder="09171234567" required>
+                                    </div>
+                                    <span class="error-msg" id="phone-error">Please enter phone number</span>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary btn-block next-step-btn" data-next="2">Next: Choose Accommodation <span class="material-icons-round">arrow_forward</span></button>
+                        </div>
+                        
+                        <!-- Form Step 2: Accommodation & Dates -->
+                        <div class="form-step" data-step="2">
+                            <h4 class="step-title">Step 2: Stay Details</h4>
+                            
+                            <div class="form-group">
+                                <label for="accommodation-type">Campsite/Room Type <span class="required">*</span></label>
+                                <div class="input-icon-wrapper">
+                                    <span class="material-icons-round input-icon">holiday_village</span>
+                                    <select id="accommodation-type" name="accommodation-type" required>
+                                        <option value="" disabled selected>-- Select Room or Package --</option>
+                                        <optgroup label="Kubo Rooms (Overnight)">
+                                            <option value="yakap" data-rate="1299" data-type="overnight" data-max="2">Yakap Room - ₱1,299/night (Good for 2)</option>
+                                            <option value="pahinga" data-rate="1899" data-type="overnight" data-max="3">Pahinga Room - ₱1,899/night (Good for 3)</option>
+                                            <option value="maligaya" data-rate="5999" data-type="overnight" data-max="10">Maligaya Room - ₱5,999/night (Good for 10)</option>
+                                        </optgroup>
+                                        <optgroup label="Aircon Cabin (Overnight)">
+                                            <option value="lambing" data-rate="2999" data-type="overnight" data-max="2">Lambing Cabin - ₱2,999/night (Good for 2)</option>
+                                        </optgroup>
+                                        <optgroup label="Couples Promo Packages">
+                                            <option value="tinatangi-yakap" data-rate="2910" data-type="overnight" data-max="2">Tinatangi Package (Yakap Kubo) - ₱2,910</option>
+                                            <option value="tinatangi-lambing" data-rate="4610" data-type="overnight" data-max="2">Tinatangi Package (Lambing Cabin) - ₱4,610</option>
+                                        </optgroup>
+                                        <optgroup label="Tents (Overnight / Daytour)">
+                                            <option value="tent-kapiling" data-rate="999" data-type="both" data-max="2">Kapiling Tent (Pre-pitched) - ₱999</option>
+                                            <option value="tent-own" data-rate="350" data-type="both" data-max="100">Own Tent Set-up - ₱350/head</option>
+                                        </optgroup>
+                                        <optgroup label="Day Tour Only (8AM - 8PM)">
+                                            <option value="cottage-silong" data-rate="600" data-type="daytour" data-max="6">Silong Cottage - ₱600 (Good for 6)</option>
+                                            <option value="cottage-tambay" data-rate="1300" data-type="daytour" data-max="10">Tambay Cottage - ₱1,300 (Good for 10)</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <span class="error-msg" id="accommodation-error">Select accommodation type</span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="check-in-date">Check-In Date <span class="required">*</span></label>
+                                    <div class="input-icon-wrapper">
+                                        <span class="material-icons-round input-icon">login</span>
+                                        <input type="date" id="check-in-date" name="check-in-date" required>
+                                    </div>
+                                    <span class="error-msg" id="check-in-error">Enter check-in date</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="check-out-date">Check-Out Date <span class="required">*</span></label>
+                                    <div class="input-icon-wrapper">
+                                        <span class="material-icons-round input-icon">logout</span>
+                                        <input type="date" id="check-out-date" name="check-out-date" required>
+                                    </div>
+                                    <span class="error-msg" id="check-out-error">Enter check-out date</span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guest-count">Number of Guests <span class="required">*</span></label>
+                                    <div class="input-icon-wrapper">
+                                        <span class="material-icons-round input-icon">groups</span>
+                                        <input type="number" id="guest-count" name="guest-count" min="1" max="100" value="2" required>
+                                    </div>
+                                    <span class="info-label" id="occupancy-info">Selected room handles up to 2 pax. Extra head fees apply above capacity.</span>
+                                    <span class="error-msg" id="guests-error">Enter guest count</span>
+                                </div>
+                            </div>
+
+                            <div class="btn-row">
+                                <button type="button" class="btn btn-outline prev-step-btn" data-prev="1"><span class="material-icons-round">arrow_back</span> Back</button>
+                                <button type="button" class="btn btn-primary next-step-btn" data-next="3">Next: Extras & Add-ons <span class="material-icons-round">arrow_forward</span></button>
+                            </div>
+                        </div>
+
+                        <!-- Form Step 3: Extras, Add-ons & Corkages -->
+                        <div class="form-step" data-step="3">
+                            <h4 class="step-title">Step 3: Extras & Add-ons (Optional)</h4>
+                            
+                            <div class="add-ons-container">
+                                <!-- Kawa Bath Selection -->
+                                <div class="add-on-section">
+                                    <h5>Kalinaw Kawa Bath Experience</h5>
+                                    <div class="kawa-select-box">
+                                        <label class="checkbox-wrapper">
+                                            <input type="checkbox" id="add-kawa-bath" name="add-kawa-bath">
+                                            <span class="checkbox-label">Add 1-Hour Hot Kawa Bath (₱349)</span>
+                                        </label>
+                                        
+                                        <div class="kawa-addons-wrapper disabled" id="kawa-addons-group">
+                                            <p class="font-sm text-muted">Kawa Bath Add-ons:</p>
+                                            <label class="checkbox-wrapper font-sm">
+                                                <input type="checkbox" id="kawa-flowers" name="kawa-flowers" disabled>
+                                                <span>Fresh Flowers (+₱50)</span>
+                                            </label>
+                                            <label class="checkbox-wrapper font-sm">
+                                                <input type="checkbox" id="kawa-bathbomb" name="kawa-bathbomb" disabled>
+                                                <span>Scented Bath Bomb (+₱120)</span>
+                                            </label>
+                                            <label class="checkbox-wrapper font-sm">
+                                                <input type="checkbox" id="kawa-extension" name="kawa-extension" disabled>
+                                                <span>30 Mins Extension (+₱150)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Equipment Rental Checklist -->
+                                <div class="add-on-section">
+                                    <h5>Equipment & Amenity Rentals</h5>
+                                    <div class="rentals-grid">
+                                        <div class="rental-qty-box">
+                                            <label for="rent-pillow">Pillows (₱50/ea)</label>
+                                            <input type="number" id="rent-pillow" class="rental-input" min="0" max="20" value="0">
+                                        </div>
+                                        <div class="rental-qty-box">
+                                            <label for="rent-blanket">Blanket (₱100/ea)</label>
+                                            <input type="number" id="rent-blanket" class="rental-input" min="0" max="20" value="0">
+                                        </div>
+                                        <div class="rental-qty-box">
+                                            <label for="rent-towel">Towel (₱100/ea)</label>
+                                            <input type="number" id="rent-towel" class="rental-input" min="0" max="20" value="0">
+                                        </div>
+                                        <div class="rental-qty-box">
+                                            <label for="rent-cooking">Cooking Set (₱500)</label>
+                                            <input type="number" id="rent-cooking" class="rental-input" min="0" max="2" value="0">
+                                        </div>
+                                        <div class="rental-qty-box">
+                                            <label for="rent-grill">Grill Set (₱150)</label>
+                                            <input type="number" id="rent-grill" class="rental-input" min="0" max="2" value="0">
+                                        </div>
+                                        <div class="rental-qty-box">
+                                            <label for="rent-bonfire">Bonfire 1 Set (₱249)</label>
+                                            <input type="number" id="rent-bonfire" class="rental-input" min="0" max="5" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Corkage Declaration -->
+                                <div class="add-on-section">
+                                    <h5>Corkage Declarations (If applicable)</h5>
+                                    <div class="corkages-list">
+                                        <label class="checkbox-wrapper">
+                                            <input type="checkbox" id="corkage-alcohol" name="corkage-alcohol">
+                                            <span class="checkbox-label">Bringing Alcoholic Drinks (+₱200 flat fee)</span>
+                                        </label>
+                                        <label class="checkbox-wrapper">
+                                            <input type="checkbox" id="corkage-gas" name="corkage-gas">
+                                            <span class="checkbox-label">Bringing Butane/Gasul Stove (+₱50 flat fee)</span>
+                                        </label>
+                                        
+                                        <!-- Tent Electric Corkage (conditional display) -->
+                                        <div class="tent-corkage-box hidden" id="tent-electric-corkage">
+                                            <p class="font-sm font-bold text-amber">Electric Corkage (Tent Guests Only):</p>
+                                            <label class="checkbox-wrapper font-sm">
+                                                <input type="checkbox" id="elec-fan" name="elec-fan">
+                                                <span>Electric Fan (+₱100)</span>
+                                            </label>
+                                            <label class="checkbox-wrapper font-sm">
+                                                <input type="checkbox" id="elec-kettle" name="elec-kettle">
+                                                <span>Electric Kettle (+₱50)</span>
+                                            </label>
+                                            <label class="checkbox-wrapper font-sm">
+                                                <input type="checkbox" id="elec-cooker" name="elec-cooker">
+                                                <span>Rice Cooker (+₱100)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn-row">
+                                <button type="button" class="btn btn-outline prev-step-btn" data-prev="2"><span class="material-icons-round">arrow_back</span> Back</button>
+                                <button type="button" class="btn btn-primary next-step-btn" data-next="4">Next: Review Booking <span class="material-icons-round">arrow_forward</span></button>
+                            </div>
+                        </div>
+
+                        <!-- Form Step 4: Summary & Pricing -->
+                        <div class="form-step" data-step="4">
+                            <h4 class="step-title">Step 4: Booking Summary</h4>
+                            
+                            <div class="summary-box" id="booking-summary-content">
+                                <!-- Replaced dynamically via JS, template structure: -->
+                                <table class="summary-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th class="text-right">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="summary-tbody">
+                                        <!-- Rows injected by JS -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="total-row">
+                                            <td>Total Calculated Price:</td>
+                                            <td class="text-right" id="summary-total-price">₱0.00</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="booking-notice">
+                                <span class="material-icons-round">gavel</span>
+                                <p>By proceeding, you agree to our <strong>House Rules</strong>: Gate closes at 10PM, Quiet Hours start at 10PM, and no loud speakers. PWD/Senior discounts do not apply to promotional rates.</p>
+                            </div>
+
+                            <div class="btn-row">
+                                <button type="button" class="btn btn-outline prev-step-btn" data-prev="3"><span class="material-icons-round">arrow_back</span> Back</button>
+                                <button type="submit" class="btn btn-success btn-block" id="btn-proceed-payment">Proceed to Checkout <span class="material-icons-round">credit_card</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Widget Section -->
+    <section id="weather" class="weather-section">
+        <div class="container">
+            <div class="weather-grid">
+                <div class="weather-info-text">
+                    <span class="section-badge">Live Conditions</span>
+                    <h2 class="section-title">DRT Bulacan Weather</h2>
+                    <p class="section-desc">Check out real-time weather conditions in Doña Remedios Trinidad, Bulacan. Prepare your camping outfits, tents, and gears accordingly!</p>
+                    <div class="weather-tips" id="weather-camping-tips">
+                        <!-- Filled by Javascript based on weather conditions -->
+                        <div class="tip-card">
+                            <span class="material-icons-round text-amber">wb_sunny</span>
+                            <p><strong>Perfect Camping Weather:</strong> It's dry and clear! Great night for stargazing and roasting marshmallows by the bonfire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Card Widget -->
+                <div class="weather-widget-card" id="weather-card">
+                    <div class="weather-card-header">
+                        <div class="city-info">
+                            <h3 id="weather-city">DRT, Bulacan</h3>
+                            <p id="weather-date">May 23, 2026</p>
+                        </div>
+                        <div class="weather-main-icon">
+                            <span class="material-icons-round" id="weather-icon">wb_sunny</span>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-body">
+                        <div class="temp-display">
+                            <span class="temperature" id="weather-temp">29°C</span>
+                            <span class="condition-text" id="weather-condition">Partly Cloudy</span>
+                        </div>
+                        
+                        <div class="weather-details-grid">
+                            <div class="detail-item">
+                                <span class="material-icons-round">water_drop</span>
+                                <div class="detail-text">
+                                    <span>Humidity</span>
+                                    <strong id="weather-humidity">64%</strong>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="material-icons-round">air</span>
+                                <div class="detail-text">
+                                    <span>Wind Speed</span>
+                                    <strong id="weather-wind">8 km/h</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="weather-divider">
+                    
+                    <div class="forecast-section">
+                        <h4 class="forecast-title">5-Day Forecast</h4>
+                        <div class="forecast-grid" id="weather-forecast">
+                            <!-- Injected dynamically by JS -->
+                            <div class="forecast-day">
+                                <span>Sun</span>
+                                <span class="material-icons-round">cloud</span>
+                                <strong>30°</strong>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Mon</span>
+                                <span class="material-icons-round">thunderstorm</span>
+                                <strong>27°</strong>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Tue</span>
+                                <span class="material-icons-round">wb_sunny</span>
+                                <strong>31°</strong>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Wed</span>
+                                <span class="material-icons-round">wb_cloudy</span>
+                                <strong>29°</strong>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Thu</span>
+                                <span class="material-icons-round">grain</span>
+                                <strong>28°</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Overlay / Modal -->
+    <div id="payment-modal" class="payment-modal-overlay hidden">
+        <div class="payment-modal-card">
+            <button class="payment-close-btn" id="btn-close-payment" aria-label="Close Checkout">
+                <span class="material-icons-round">close</span>
+            </button>
+            
+            <div class="payment-header">
+                <span class="material-icons-round pay-lock">lock</span>
+                <h3>Secure Booking Checkout</h3>
+            </div>
+            
+            <div class="payment-split-body">
+                <!-- Left Column: Checkout Summary -->
+                <div class="checkout-summary-column">
+                    <h4>Reservation Details</h4>
+                    <ul class="checkout-details-list" id="payment-details-list">
+                        <!-- Injected dynamically by JS -->
+                    </ul>
+                    <hr>
+                    <div class="checkout-total-row">
+                        <span>Total Due:</span>
+                        <strong id="payment-total-amount">₱0.00</strong>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Stripe UI Fields -->
+                <div class="checkout-form-column">
+                    <h4>Card Information</h4>
+                    <form id="payment-form">
+                        <!-- Stripe Elements Container -->
+                        <div id="stripe-card-element" class="stripe-card-field">
+                            <!-- Stripe card fields inject here or fallback mock inputs mount -->
+                            <div class="mock-card-fields" id="mock-card-container">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <div class="input-icon-wrapper">
+                                        <span class="material-icons-round input-icon">credit_card</span>
+                                        <input type="text" id="card-number" placeholder="4242 4242 4242 4242" maxlength="19">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Expiry Date</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvc">CVC</label>
+                                        <input type="text" id="card-cvc" placeholder="123" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-errors" role="alert" class="stripe-errors text-danger font-sm mt-xs"></div>
+                        
+                        <button type="submit" class="btn btn-success btn-block mt-md" id="btn-pay-now">
+                            <span id="payment-btn-text">Pay & Confirm Reservation</span>
+                            <div class="btn-spinner hidden" id="payment-btn-spinner"></div>
+                        </button>
+                        
+                        <p class="security-text">
+                            <span class="material-icons-round">verified_user</span>
+                            Your payment is secured and processed via Stripe. Stripe encryption keeps your card credentials private.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success/Confirmation Modal -->
+    <div id="confirmation-modal" class="payment-modal-overlay hidden">
+        <div class="confirmation-card text-center">
+            <div class="conf-icon-wrapper">
+                <span class="material-icons-round">check_circle</span>
+            </div>
+            
+            <h2 class="conf-title">Reservation Confirmed!</h2>
+            <p class="conf-lead">Thank you for booking with us, <span id="conf-guest-name">Guest</span>! Your nature getaway has been secured.</p>
+            
+            <div class="conf-summary">
+                <div class="conf-row">
+                    <span>Reference ID:</span>
+                    <strong id="conf-ref-id">KLN-1298402</strong>
+                </div>
+                <div class="conf-row">
+                    <span>Campsite Unit:</span>
+                    <strong id="conf-accommodation">Yakap Room</strong>
+                </div>
+                <div class="conf-row">
+                    <span>Stay Dates:</span>
+                    <strong id="conf-dates">May 25 - May 26, 2026</strong>
+                </div>
+                <div class="conf-row">
+                    <span>Amount Paid:</span>
+                    <strong id="conf-amount">₱1,299.00</strong>
+                </div>
+            </div>
+            
+            <div class="conf-instructions">
+                <h4>🌿 Important Next Steps</h4>
+                <ul>
+                    <li><strong>Check-in:</strong> 2:00 PM | <strong>Check-out:</strong> 12:00 NN.</li>
+                    <li>A copy of your booking summary and confirmation has been sent to <strong id="conf-email">email@domain.com</strong> (simulated).</li>
+                    <li><strong>Cellular Connection:</strong> There is no WiFi. Only Globe/TM signals are active.</li>
+                    <li><strong>Quiet Hours:</strong> Strictly starting 10:00 PM. Turn off speakers and karaoke. Respect other campers!</li>
+                </ul>
+            </div>
+            
+            <button class="btn btn-primary btn-lg mt-md" id="btn-close-confirmation">Back to Home</button>
+        </div>
+    </div>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="contact-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-info-col">
+                    <a href="#" class="footer-logo">
+                        <span class="material-icons-round logo-icon">forest</span>
+                        <span>KALINAW</span>
+                    </a>
+                    <p class="footer-desc">A peaceful nature escape in Bulacan. Disconnect from screens and reconnect with nature's home.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <span class="material-icons-round text-amber">pin_drop</span>
+                            <span>Kalinaw sa Kalawakan, Doña Remedios Trinidad, Philippines, 3009</span>
+                        </li>
+                        <li>
+                            <span class="material-icons-round text-amber">email</span>
+                            <a href="mailto:kalinawsakalawakan@gmail.com">kalinawsakalawakan@gmail.com</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/KalinawsaKalawakanCampsiteDRTBulacan" target="_blank" aria-label="Facebook Page">
+                            <svg class="social-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/kalinawsakalawakan/" target="_blank" aria-label="Instagram Page">
+                            <svg class="social-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-form-col">
+                    <h3>Send Us a Message</h3>
+                    <form id="contact-form" class="footer-contact-form">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" placeholder="Type your message here..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Send Message <span class="material-icons-round">send</span></button>
+                    </form>
+                </div>
+
+                <div class="footer-map-col">
+                    <h3>Location Map</h3>
+                    <div class="map-wrapper">
+                        <!-- Bulacan, DRT Embed Map -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61633.91421040854!2d121.0544!3d14.9814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397394c8e7ef9e7%3A0xe10f769df8b4618e!2sDo%C3%B1a%20Remedios%20Trinidad%2C%20Bulacan%2C%20Philippines!5e0!3m2!1sen!2sus!4v1716381298402!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="180" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Kalinaw sa Kalawakan Map Location">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Kalinaw sa Kalawakan Campsite. All Rights Reserved. Co-designed with nature 🌿</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot-widget">
+        <!-- Floating Action Button -->
+        <button class="chatbot-fab" id="chatbot-fab" aria-label="Open Chatbot">
+            <span class="material-icons-round chat-icon">chat</span>
+            <span class="material-icons-round close-icon hidden">close</span>
+            <span class="chat-badge" id="chat-badge">1</span>
+        </button>
+
+        <!-- Chat Panel Drawer -->
+        <div class="chat-panel hidden" id="chat-panel">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="material-icons-round chatbot-avatar-icon">support_agent</span>
+                    <div>
+                        <h4>Kalinaw Camp Companion</h4>
+                        <span class="status-online"><span class="status-dot"></span> Active Assistant</span>
+                    </div>
+                </div>
+                <button class="chat-minimize-btn" id="chat-minimize" aria-label="Minimize Chat">
+                    <span class="material-icons-round">remove</span>
+                </button>
+            </div>
+            
+            <!-- Messages Container -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-bubble bot">
+                    <p>Mabuhay! 🌿 Welcome to Kalinaw sa Kalawakan Campsite. I am your Camp Companion. How can I help you reconnect today?</p>
+                    <span class="chat-time">Just now</span>
+                </div>
+            </div>
+
+            <!-- Quick Reply Chips -->
+            <div class="chat-chips" id="chat-chips">
+                <button class="chip-btn" data-query="Rates">💰 Rates & Rooms</button>
+                <button class="chip-btn" data-query="Quiet hours">🤫 Quiet Hours</button>
+                <button class="chip-btn" data-query="Food silog">🍳 Food Menu</button>
+                <button class="chip-btn" data-query="Kawa bath">🛀 Kawa Bath Details</button>
+                <button class="chip-btn" data-query="Is there signal">📶 Mobile Signal / WiFi</button>
+                <button class="chip-btn" data-query="Corkage rates">🍾 Corkage Fees</button>
+            </div>
+
+            <!-- Chat Form Input -->
+            <form id="chat-form" class="chat-form-input">
+                <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" required>
+                <button type="submit" class="chat-send-btn" aria-label="Send Message">
+                    <span class="material-icons-round">send</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
